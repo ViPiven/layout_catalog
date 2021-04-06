@@ -1,5 +1,7 @@
 .stars {
-  @extend %flex-center;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  justify-content: center;
 
   &--count-1 :nth-child(-n + 1),
   &--count-2 :nth-child(-n + 2),

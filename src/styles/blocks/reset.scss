@@ -12,14 +12,14 @@ p {
   box-sizing: border-box;
 }
 
-main {
-  @extend %flex-center;
-}
-
 .catalog-wrapper {
-  @extend %flex-space-between;
-  flex-wrap: wrap;
-  max-width: 1024px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 200px);
+  justify-content: center;
   padding: 50px 40px;
-  gap: 48px;
+  gap: 50px 48px;
+
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat(4, 200px);
+  }
 }

@@ -2,7 +2,9 @@
   @include nav($font-weight-500);
 
   &__list {
-    @extend %flex-space-between;
+    display: grid;
+    justify-content: space-between;
+    grid-template-columns: repeat(8, 1fr);
     margin: 0;
     padding: 0;
     list-style: none;

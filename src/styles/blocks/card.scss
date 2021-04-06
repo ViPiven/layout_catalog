@@ -1,14 +1,14 @@
 .card {
-  display: flex;
-  flex-direction: column;
+  display: grid;
   padding: 14px;
-  width: 200px;
   background: $main-color;
   border: 1px solid #f3f3f3;
   border-radius: 5px;
 
   &__img {
-    @extend %flex-center;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-content: center;
     height: 134px;
     margin: 15px 5px 45px;
     transition: transform 0.4s;
@@ -34,17 +34,22 @@
   }
 
   &__reviews {
-    @extend %flex-space-between;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: space-between;
     @extend %align-items-center;
     margin-bottom: 20px;
 
     &-count {
       @include card-productCode($font-weight-400);
+      text-align: end;
     }
   }
 
   &__card-price {
-    @extend %flex-space-between;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: space-between;
     align-items: baseline;
     margin-bottom: 20px;
     font-size: 11px;
@@ -52,10 +57,12 @@
 
   &__card-value {
     @include card-value($font-weight-700);
+    text-align: end;
   }
 
   &__card-btn-link {
-    @extend %flex-center;
+    display: grid;
+    justify-content: center;
     @extend %align-items-center;
     @include card-btn-link($font-weight-700);
     width: 100%;
